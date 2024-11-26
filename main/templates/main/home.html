@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Юридическая Фирма</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav>
+        <ul>
+            <li><a href="/">Главная</a></li>
+            <li><a href="/clients/">Клиенты</a></li>
+            <li><a href="/feedback/">Обратная связь</a></li>
+            <li><a href="/blog/">Блог</a></li>
+            <li><a href="/court_timer/">Таймер заседания</a></li>
+        </ul>
+    </nav>
+
+    <!-- Контент -->
+    <h1>{{ firm_name }}</h1>
+    <h2>Услуги:</h2>
+    <ul>
+        {% for service in services %}
+        <li>{{ service }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Контакты:</h2>
+    <p>Email: {{ contact.email }}</p>
+    <p>Телефон: {{ contact.phone }}</p>
+</body>
+</html>
